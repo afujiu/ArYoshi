@@ -1,7 +1,7 @@
 <template>
     <a-scene embedded arjs="sourceType: webcam;">
         <!-- マーカー -->
-        <a-marker type="geo" latitude="30" longitude="139">
+        <a-marker type="geo" :latitude="{lat}" :longitude="{lon}">
             <!-- ここにARオブジェクトを配置 -->
             <a-box position="0 0.5 0" material="color: red;"></a-box>
         </a-marker>
@@ -11,7 +11,8 @@
     </a-scene>
 </template>
 <script setup lang="ts">
-    const name = ref('');
+    const lat = ref(0);
+    const lon = ref(0);
     const getLocation=()=>{
       // ブラウザがGeolocation APIをサポートしているか確認
       if (navigator.geolocation) {
@@ -23,6 +24,8 @@
       // 緯度と経度を表示
       console.log("Latitude: " + latitude + ", Longitude: " + longitude);
       alert("Latitude: " + latitude + ", Longitude: " + longitude);
+      lat.value = latitude;
+      lon.value =longitude;
       // ここで取得した緯度と経度を使用して他の処理を行うことができます
     }, showError);
       } else {
