@@ -1,13 +1,15 @@
 <template>
     <a-scene embedded arjs="sourceType: webcam;">
         <!-- マーカー -->
-        <a-marker type="geo" :latitude="{lat}" :longitude="{lon}">
-            <!-- ここにARオブジェクトを配置 -->
-            <a-box position="0 0.5 0" material="color: red;"></a-box>
-        </a-marker>
+        <a-text
+            value="This content will always face you."
+            look-at="[gps-camera]"
+            scale="50 50 50"
+            gps-entity-place="latitude: 35.65861027555679; longitude: 139.74542998791907;"
+        ></a-text>
         <!-- カメラとライト -->
-        <a-entity camera></a-entity>
-        <a-light type="ambient" intensity="1"></a-light>
+        <a-camera gps-camera rotation-reader></a-camera>
+
     </a-scene>
 </template>
 <script setup lang="ts">
