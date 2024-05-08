@@ -25,7 +25,6 @@
       var longitude = position.coords.longitude;
       // 緯度と経度を表示
       console.log("Latitude: " + latitude + ", Longitude: " + longitude);
-      alert("Latitude: " + latitude + ", Longitude: " + longitude);
       lat.value = latitude;
       lon.value =longitude;
       // ここで取得した緯度と経度を使用して他の処理を行うことができます
