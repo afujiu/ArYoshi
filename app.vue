@@ -1,21 +1,8 @@
 <template>
-    <a-scene embedded arjs="sourceType: webcam;">
-        <!-- マーカー -->
-        <a-text
-            value="This content will always face you."
-            look-at="[gps-camera]"
-            scale="50 50 50"
-            gps-entity-place="latitude: 35.65861027555679; longitude: 139.74542998791907;"
-        ></a-text>
-        <a-box
-            material="color: red"
-            gps-entity-place="latitude: 35.65861027555679; longitude: 139.74542998791907;"
-            scale="30 30 30"
-        ></a-box>
-        <!-- カメラとライト -->
-        <a-camera gps-camera rotation-reader></a-camera>
-
-    </a-scene>
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        <a-box material="color: red" gps-entity-place="latitude: 43.065112; longitude: 141.361493;" scale="0.5 0.8 0.5"></a-box>
+    <a-camera gps-camera rotation-reader> </a-camera>
+</a-scene>
 </template>
 <script setup lang="ts">
     const lat = ref(0);
