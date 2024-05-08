@@ -7,6 +7,11 @@
             scale="50 50 50"
             gps-entity-place="latitude: 35.65861027555679; longitude: 139.74542998791907;"
         ></a-text>
+        <a-box
+            material="color: red"
+            gps-entity-place="latitude: 35.65861027555679; longitude: 139.74542998791907;"
+            scale="30 30 30"
+        ></a-box>
         <!-- カメラとライト -->
         <a-camera gps-camera rotation-reader></a-camera>
 
